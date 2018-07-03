@@ -1,6 +1,6 @@
 # Tracp
 
- **Tracp Is A Python Script For Scanning For Geoip Info About Target IP Address
+- Tracp Is A Python Script For Scanning For Geoip Info About Target IP Address
 
 - Tracp Help Msg
 
@@ -17,19 +17,18 @@
 # Requirements:
    - urllib2: reinstall your python if this library is not exist because it comes with python
    - json:
-         **INSTALL USE COMMAND:> pip install simplejson
+            
+         Install It Usage This Command:> pip install simplejson
          
 # install
   - git clone https://www.github.com/Oseid/Tracp.git
   - cd Tracp/
   
   
-  
 # Usage
-   python Tracp.py  1 : for set single ip scan
-   python Trcap.py  2 : for set file IPs for scan all ips from him
+   - > python Tracp.py  1 : for set single ip scan
+   - > python Trcap.py  2 : for set file IPs for scan all ips from him
    
-
 # That's All:)
 
 - This Script By Oseid Aldary
