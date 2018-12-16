@@ -1,5 +1,5 @@
 #!/usr/bin/python
-#$$$$$$$$$$$$$$$$
+# -*- coding: UTF-8 -*-
 
 #>>>>{> Welcome <}<<<<#
 #--------------------------------
@@ -8,23 +8,17 @@
 #[>] CodedBy{> Oseid Aldary #####
 #############################
 # LIBRARIES #
-import optparse,socket,json,urllib2;from time import sleep; from sys import platform as useros
-# COLORS #
-if useros =="linux" or useros =="linux2":
- rd = "\033[1;31m"
- gr = "\033[1;32m"
- yl = "\033[1;33m"
- pu = "\033[1;35m"
- cy = "\033[1;36m"
- wi = "\033[1;37m"
-else:
- rd = ""
- gr = ""
- yl = ""
- pu = ""
- cy = ""
- wi = ""
-#################
+import optparse,socket,json,urllib2;from time import sleep; from os import system as sy
+sy("cls||clear")
+
+# COLORS ##################
+rd = "\033[1;31m" #>Red   #
+gr = "\033[1;32m" #>Green #
+yl = "\033[1;33m" #>Yallow#
+pu = "\033[1;35m" #>Purple#
+cy = "\033[1;36m" #>Cyan  #
+wi = "\033[1;37m" #>>White#
+###########################
 
 # Check Internet Connection #
 server = "www.google.com"
@@ -65,34 +59,34 @@ def Main():
 			t = t.strip()
 			try:
                            url = "http://ip-api.com/json/"
-                           reponse = urllib2.urlopen(url + str(t) )
-                           name = reponse.read()
+                           response = urllib2.urlopen(url + str(t) )
+                           name = response.read()
                            labs = json.loads(name)
-                           theip = labs['query']
+                           theip = labs['query'].encode('ascii','replace')
                            print(gr+"\n["+yl+str(loop)+gr+"] Get GeoIP Info About TARGET[ "+rd+str(theip)+gr+" ] ...Wait")
 			   loop +=1
-	                   test = labs['regionName']
-                           print(rd+"INFO"+gr+":["+wi+str(theip)+gr+"]===:")
+	                   test = labs['regionName'].encode('ascii','replace')
+                           print(rd+"INFO"+gr+":["+wi+str(theip).encode('ascii','replace')+gr+"]===:")
 	                   sleep(0.10)
-                           print(gr + "\t\t IP: " +wi+theip)
+                           print(gr + "\t\t IP: " +wi+theip.encode('ascii','replace'))
 	                   sleep(0.10)
-                           print(gr+ "\t\t Status: " +wi+ labs['status'])
+                           print(gr+ "\t\t Status: " +wi+ labs['status'].encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr+ "\t\t Region: " +wi+ test)
+                           print(gr+ "\t\t Region: " +wi+ test.encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr + "\t\t Country: " +wi+ labs['country'])
+                           print(gr + "\t\t Country: " +wi+ labs['country'].encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr + "\t\t City: " +wi+ labs['city'])
+                           print(gr + "\t\t City: " +wi+ labs['city'].encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr + "\t\t ISP: "+wi + labs['isp'])
+                           print(gr + "\t\t ISP: "+wi + labs['isp'].encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']) + "," + str(labs['lon']))
+                           print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']).encode('ascii','replace') + "," + str(labs['lon']).encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr + "\t\t ZIPCODE: "+wi + labs['zip'])
+                           print(gr + "\t\t ZIPCODE: "+wi + labs['zip'].encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr + "\t\t TimeZone: " +wi+ labs['timezone'])
+                           print(gr + "\t\t TimeZone: " +wi+ labs['timezone'].encode('ascii','replace'))
                            sleep(0.10)
-                           print(gr + "\t\t AS: " +wi+ labs['as'])
+                           print(gr + "\t\t AS: " +wi+ labs['as'].encode('ascii','replace'))
                            sleep(0.10)
                            print(pu+"===============================\n"+wi)
 			   ss.append(1)
@@ -122,34 +116,34 @@ def Main():
 			   t = t.strip()
 			   try:
                             url = "http://ip-api.com/json/"
-                            reponse = urllib2.urlopen(url + str(t) )
-                            name = reponse.read()
+                            response = urllib2.urlopen(url + str(t) )
+                            name = response.read()
                             labs = json.loads(name)
-                            theip = labs['query']
+                            theip = labs['query'].encode('ascii','replace')
                             print(gr+"\n["+yl+str(loop)+gr+"] Get GeoIP Info About TARGET[ "+rd+str(theip)+gr+" ] ...Wait")
 			    loop +=1
-	                    test = labs['regionName']
+	                    test = labs['regionName'].encode('ascii','replace')
                             print(rd+"INFO"+gr+":["+wi+str(theip)+gr+"]===:")
 	                    sleep(0.10)
-                            print(gr + "\t\t IP: " +wi+theip)
+                            print(gr + "\t\t IP: " +wi+theip.encode('ascii','replace'))
 	                    sleep(0.10)
-                            print(gr+ "\t\t Status: " +wi+ labs['status'])
+                            print(gr+ "\t\t Status: " +wi+ labs['status'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr+ "\t\t Region: " +wi+ test)
+                            print(gr+ "\t\t Region: " +wi+ test.encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t Country: " +wi+ labs['country'])
+                            print(gr + "\t\t Country: " +wi+ labs['country'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t City: " +wi+ labs['city'])
+                            print(gr + "\t\t City: " +wi+ labs['city'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t ISP: "+wi + labs['isp'])
+                            print(gr + "\t\t ISP: "+wi + labs['isp'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']) + "," + str(labs['lon']))
+                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']).encode('ascii','replace') + "," + str(labs['lon']).encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'])
+                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'])
+                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t AS: " +wi+ labs['as'])
+                            print(gr + "\t\t AS: " +wi+ labs['as'].encode('ascii','replace'))
                             sleep(0.10)
                             print(pu+"===============================\n"+wi)
 			    ss.append(1)
@@ -168,33 +162,33 @@ def Main():
 		else:
 			   try:
                             url = "http://ip-api.com/json/"
-                            reponse = urllib2.urlopen(url + str(tar) )
-                            name = reponse.read()
+                            response = urllib2.urlopen(url + str(tar) )
+                            name = response.read()
                             labs = json.loads(name)
-			    theip = labs['query']
+			    theip = labs['query'].encode('ascii','replace')
                             print(gr+"\n["+wi+"#"+gr+"] Get GeoIP Info About TARGET[ "+rd+str(theip)+gr+" ] ...Wait")
-	                    test = labs['regionName']
-                            print(rd+"INFO"+gr+":["+wi+str(theip)+gr+"]===:")
+	                    test = labs['regionName'].encode('ascii','replace')
+                            print(rd+"INFO"+gr+":["+wi+str(theip).encode('ascii','replace')+gr+"]===:")
 	                    sleep(0.10)
-                            print(gr + "\t\t IP: " +wi+theip)
+                            print(gr + "\t\t IP: " +wi+theip.encode('ascii','replace'))
 	                    sleep(0.10)
-                            print(gr+ "\t\t Status: " +wi+ labs['status'])
+                            print(gr+ "\t\t Status: " +wi+ labs['status'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr+ "\t\t Region: " +wi+ test)
+                            print(gr+ "\t\t Region: " +wi+ test.encode('ascii','replace')) 
                             sleep(0.10)
-                            print(gr + "\t\t Country: " +wi+ labs['country'])
+                            print(gr + "\t\t Country: " +wi+ labs['country'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t City: " +wi+ labs['city'])
+                            print(gr + "\t\t City: " +wi+ labs['city'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t ISP: "+wi + labs['isp'])
+                            print(gr + "\t\t ISP: "+wi + labs['isp'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']) + "," + str(labs['lon']))
+                            print(gr + "\t\t Lat,Lon: "+wi + str(labs['lat']).encode('ascii','replace') + "," + str(labs['lon']).encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'])
+                            print(gr + "\t\t ZIPCODE: "+wi + labs['zip'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'])
+                            print(gr + "\t\t TimeZone: " +wi+ labs['timezone'].encode('ascii','replace'))
                             sleep(0.10)
-                            print(gr + "\t\t AS: " +wi+ labs['as'])
+                            print(gr + "\t\t AS: " +wi+ labs['as'].encode('ascii','replace'))
                             sleep(0.10)
                             print(pu+"===============================\n"+wi)
 			   except KeyboardInterrupt:
@@ -209,10 +203,8 @@ def Main():
    else:
 	print(parse.usage)
 	exit(1)
-
 if __name__=="__main__":
 	Main()
-
 ##############################################################
 ##################### 		     #########################
 #####################   END OF TOOL  #########################
@@ -221,4 +213,3 @@ if __name__=="__main__":
 #This Tool by Oseid Aldary
 #Have a nice day :)
 #GoodBye
-
